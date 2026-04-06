@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
 
-// ─── Paragraph Banks ───────────────────────────────────────────────────────────
+// ─── Paragraphs ───────────────────────────────────────────────────────────
 
 const PARAGRAPHS = {
   easy: [
@@ -43,7 +43,7 @@ function getPerformanceLabel(wpm) {
   return { label: "Keep Practicing 💪", color: "#a0a0a0" };
 }
 
-// ─── Timer Component ────────────────────────────────────────────────────────────
+// ─── Timer ────────────────────────────────────────────────────────────
 function Timer({ timeLeft, totalTime }) {
   const pct = (timeLeft / totalTime) * 100;
   const isUrgent = timeLeft <= 10;
@@ -63,7 +63,7 @@ function Timer({ timeLeft, totalTime }) {
   );
 }
 
-// ─── Live Stats Component ───────────────────────────────────────────────────────
+// ─── Live Stats ───────────────────────────────────────────────────────
 function LiveStats({ wpm, accuracy, correctChars, totalTyped }) {
   return (
     <div className="live-stats">
@@ -87,7 +87,7 @@ function LiveStats({ wpm, accuracy, correctChars, totalTyped }) {
   );
 }
 
-// ─── Typing Box Component ───────────────────────────────────────────────────────
+// ─── Typing Box ───────────────────────────────────────────────────────
 function TypingBox({ paragraph, userInput, onInput, isFinished, inputRef }) {
   const renderText = () => {
     return paragraph.split("").map((char, i) => {
@@ -129,7 +129,7 @@ function TypingBox({ paragraph, userInput, onInput, isFinished, inputRef }) {
   );
 }
 
-// ─── Result Screen Component ────────────────────────────────────────────────────
+// ─── Result Screen ────────────────────────────────────────────────────
 function Result({ wpm, accuracy, timeTaken, onRestart }) {
   const { label, color } = getPerformanceLabel(wpm);
   return (
@@ -158,7 +158,7 @@ function Result({ wpm, accuracy, timeTaken, onRestart }) {
   );
 }
 
-// ─── Main App ───────────────────────────────────────────────────────────────────
+// ─── Main ───────────────────────────────────────────────────────────────────
 export default function App() {
   const TOTAL_TIME = 60;
 
