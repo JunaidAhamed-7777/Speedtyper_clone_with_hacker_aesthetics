@@ -5,10 +5,32 @@ import "./App.css";
 
 const PARAGRAPHS = {
   easy: [
-    "the cat sat on the mat and looked at the sun the dog ran in the park and had a lot of fun the bird sang a song and flew up to the sky it was a warm and bright day in the month of may",
-    "she went to the store to buy some bread and milk she paid for the food and walked back home the air was cool and the birds were singing she felt happy and calm as she walked along the road",
-    "he likes to read books and learn new things every day he goes to the library and picks a book to read he sits by the window and reads for many hours he loves stories about space and far away worlds",
-    "the sun rises in the east and sets in the west the moon shines at night and lights up the dark sky the stars are tiny dots of light that fill the night we can see them on a clear dark night",
+    {
+      text: "Once there were four children named Peter, Susan, Edmund, and Lucy who were sent away from London to live in a large old house full of rooms and long quiet hallways.",
+      source: "The Lion, the Witch and the Wardrobe · C.S. Lewis · Chapter 1",
+    },
+	
+	//!!!!!! NOTE TO SELF: DO NOT FORGET THE COMMAS AFTER TEXT AND SOURCE ALSO !!!!!!
+	
+	{
+		text: "The Cat in the Hat came in with a bump and a grin, saying he could show tricks and games to make a dull rainy day much more fun for everyone in the house.",
+		source: "The Cat in the Hat · Dr. Seuss · Opening Section",
+	},
+	
+	{
+		text: "Max sailed off through night and day and in and out of weeks and almost over a year to where the wild things are, and he found creatures who roared their terrible roars.",
+		source: "Where the Wild Things Are · Maurice Sendak · Journey Scene",
+	},
+	
+	{
+		text: "I will not eat them in a house, I will not eat them with a mouse, I do not like them here or there, I do not like them anywhere, but I might try them someday.",
+		source: "Green Eggs and Ham · Dr. Seuss · Repetition Section",
+	},
+	
+	{
+		text: "In a small green room there was a quiet bed and a bright moon shining through the window, and everything slowly grew calm as the night became deeper and softer.",
+		source: "Goodnight Moon · Margaret Wise Brown · Closing Scene",
+	},
   ],
   medium: [
     "The quick brown fox jumps over the lazy dog near the riverbank. Several birds took flight as the commotion startled them. Nature has a remarkable way of balancing chaos and tranquility in every moment we observe.",
@@ -32,7 +54,16 @@ const PARAGRAPHS = {
 
 function getRandomParagraph(difficulty) {
   const list = PARAGRAPHS[difficulty];
-  return list[Math.floor(Math.random() * list.length)];
+  const item = list[Math.floor(Math.random() * list.length)];
+
+  // If it's already an object (easy), return it
+  if (typeof item === "object") return item;
+
+  // If it's a string (medium/hard/code), wrap it
+  return {
+    text: item,
+    source: "Unknown Source",
+  };
 }
 
 function getPerformanceLabel(wpm) {
@@ -130,7 +161,7 @@ function TypingBox({ paragraph, userInput, onInput, isFinished, inputRef }) {
 }
 
 // ─── Result Screen ────────────────────────────────────────────────────
-function Result({ wpm, accuracy, timeTaken, onRestart }) {
+function Result({ wpm, accuracy, timeTaken, source, onRestart }) {
   const { label, color } = getPerformanceLabel(wpm);
   return (
     <div className="result-screen">
@@ -150,6 +181,10 @@ function Result({ wpm, accuracy, timeTaken, onRestart }) {
           <span className="result-number" style={{ color: "#ffd700" }}>{timeTaken}s</span>
           <span className="result-desc">Time Taken</span>
         </div>
+		<div className="result-source">
+		  <span className="source-label">Source:</span>
+		  <span className="source-text">{source}</span>
+		</div>
       </div>
       <button className="restart-btn" onClick={onRestart}>
         ↺ Try Again
@@ -163,8 +198,10 @@ export default function App() {
   const TOTAL_TIME = 60;
 
   const [difficulty, setDifficulty] = useState("medium");
-  const [paragraph, setParagraph] = useState(() => getRandomParagraph("medium"));
-  const [userInput, setUserInput] = useState("");
+  const [paragraphData, setParagraphData] = useState(() =>
+    getRandomParagraph("medium")
+  );
+  const paragraph = paragraphData.text;  const [userInput, setUserInput] = useState("");
   const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
   const [isRunning, setIsRunning] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
@@ -236,7 +273,7 @@ export default function App() {
   const handleRestart = useCallback(() => {
     clearInterval(timerRef.current);
     const newParagraph = getRandomParagraph(difficulty);
-    setParagraph(newParagraph);
+    setParagraphData(newParagraph);
     setUserInput("");
     setTimeLeft(TOTAL_TIME);
     setIsRunning(false);
@@ -250,7 +287,7 @@ export default function App() {
     setDifficulty(d);
     clearInterval(timerRef.current);
     const newParagraph = getRandomParagraph(d);
-    setParagraph(newParagraph);
+    setParagraphData(newParagraph);
     setUserInput("");
     setTimeLeft(TOTAL_TIME);
     setIsRunning(false);
@@ -320,11 +357,12 @@ export default function App() {
           </>
         ) : (
           <Result
-            wpm={wpm}
-            accuracy={accuracy}
-            timeTaken={timeTaken}
-            onRestart={handleRestart}
-          />
+			  wpm={wpm}
+			  accuracy={accuracy}
+			  timeTaken={timeTaken}
+			  source={paragraphData.source}
+			  onRestart={handleRestart}
+			/>
         )}
       </main>
 
