@@ -20,21 +20,25 @@ const PARAGRAPHS = {
 	{
 		text: "The Cat in the Hat came in with a bump and a grin, saying he could show tricks and games to make a dull rainy day much more fun for everyone in the house.",
 		source: " The Cat in the Hat · Dr. Seuss · Opening Section",
+    image: "/assets/catinthehat.png",
 	},
 	
 	{
 		text: "Max sailed off through night and day and in and out of weeks and almost over a year to where the wild things are, and he found creatures who roared their terrible roars.",
 		source: " Where the Wild Things Are · Maurice Sendak · Journey Scene",
+    image: "/assets/wherethewildthingsare.png",
 	},
 	
 	{
 		text: "I will not eat them in a house, I will not eat them with a mouse, I do not like them here or there, I do not like them anywhere, but I might try them someday.",
 		source: " Green Eggs and Ham · Dr. Seuss · Repetition Section",
+    image: "/assets/greeneggsandham.png",
 	},
 	
 	{
 		text: "In a small green room there was a quiet bed and a bright moon shining through the window, and everything slowly grew calm as the night became deeper and softer.",
 		source: " Goodnight Moon · Margaret Wise Brown · Closing Scene",
+    image: "/assets/goodnightmoon.png",
 	},
   ],
   medium: [
@@ -249,6 +253,7 @@ function Result({ wpm, accuracy, timeTaken, source,image, onRestart }) {
       <div className="result-badge" style={{ borderColor: color, color }}>
         {label}
       </div>
+
       <div className="result-grid">
         <div className="result-card">
           <span className="result-number" style={{ color: "#39ff14" }}>{wpm}</span>
@@ -262,7 +267,7 @@ function Result({ wpm, accuracy, timeTaken, source,image, onRestart }) {
           <span className="result-number" style={{ color: "#ffd700" }}>{timeTaken}s</span>
           <span className="result-desc">Time Taken</span>
         </div>
-
+    </div>
 		<div className="result-source">
 		  <span className="source-label">Source:</span>
 		  <span className="source-text">{source}</span>
@@ -274,7 +279,7 @@ function Result({ wpm, accuracy, timeTaken, source,image, onRestart }) {
       </div>
     )}
 
-      </div>
+
       <button className="restart-btn" onClick={onRestart}>
         ↺ Try Again
       </button>
