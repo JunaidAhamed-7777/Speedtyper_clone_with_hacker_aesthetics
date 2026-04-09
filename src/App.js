@@ -5,38 +5,59 @@ import "./App.css";
 
 const PARAGRAPHS = {
   easy: [
+	//ADD ONE SPACE AT BEGINNING OF SOURCE
     {
       text: "Once there were four children named Peter, Susan, Edmund, and Lucy who were sent away from London to live in a large old house full of rooms and long quiet hallways.",
-      source: "The Lion, the Witch and the Wardrobe · C.S. Lewis · Chapter 1",
+      source: " The Lion, the Witch and the Wardrobe · C.S. Lewis · Chapter 1",
     },
 	
 	//!!!!!! NOTE TO SELF: DO NOT FORGET THE COMMAS AFTER TEXT AND SOURCE ALSO !!!!!!
 	
 	{
 		text: "The Cat in the Hat came in with a bump and a grin, saying he could show tricks and games to make a dull rainy day much more fun for everyone in the house.",
-		source: "The Cat in the Hat · Dr. Seuss · Opening Section",
+		source: " The Cat in the Hat · Dr. Seuss · Opening Section",
 	},
 	
 	{
 		text: "Max sailed off through night and day and in and out of weeks and almost over a year to where the wild things are, and he found creatures who roared their terrible roars.",
-		source: "Where the Wild Things Are · Maurice Sendak · Journey Scene",
+		source: " Where the Wild Things Are · Maurice Sendak · Journey Scene",
 	},
 	
 	{
 		text: "I will not eat them in a house, I will not eat them with a mouse, I do not like them here or there, I do not like them anywhere, but I might try them someday.",
-		source: "Green Eggs and Ham · Dr. Seuss · Repetition Section",
+		source: " Green Eggs and Ham · Dr. Seuss · Repetition Section",
 	},
 	
 	{
 		text: "In a small green room there was a quiet bed and a bright moon shining through the window, and everything slowly grew calm as the night became deeper and softer.",
-		source: "Goodnight Moon · Margaret Wise Brown · Closing Scene",
+		source: " Goodnight Moon · Margaret Wise Brown · Closing Scene",
 	},
   ],
   medium: [
-    "The quick brown fox jumps over the lazy dog near the riverbank. Several birds took flight as the commotion startled them. Nature has a remarkable way of balancing chaos and tranquility in every moment we observe.",
-    "Learning to type faster requires consistent practice and focused attention. Your fingers should rest on the home row keys, moving efficiently to each letter. Over time, muscle memory takes over and speed increases naturally.",
-    "Modern technology has transformed the way humans communicate and share information. Social networks connect billions of people across different time zones and cultures. Yet meaningful conversation still depends on clarity and thoughtful expression.",
-    "Scientists discovered that deep ocean trenches harbor unique ecosystems thriving under extreme pressure. Bioluminescent creatures navigate the perpetual darkness using chemical light. These environments challenge our understanding of where life can exist.",
+	{
+		text: "It was the best of times, it was the worst of times, a period filled with hope and despair, where everything seemed possible yet uncertain, and the world moved forward in ways no one could fully understand.",
+		source: " A Tale of Two Cities · Charles Dickens · Book 1, Chapter 1" ,
+	},
+	
+	{
+		text: "Call me Ishmael. Some years ago, never mind how long precisely, I found myself drawn to the sea, seeking a sense of purpose and adventure in a world that often felt too confined.",
+		source: " Moby-Dick · Herman Melville · Chapter 1" ,
+	},
+	
+	{
+		text: "It is a truth universally acknowledged that a single man of fortune must be in want of a wife, though the feelings and views of such a man may be quite unknown to those around him.",
+		source: " Pride and Prejudice · Jane Austen · Chapter 1" ,
+	},
+	
+	{
+		text: "The man in black fled across the desert, and the gunslinger followed, moving steadily under the burning sun, driven by a purpose that stretched far beyond the horizon.",
+		source: " The Gunslinger · Stephen King · Chapter 1" ,
+	},
+	
+	{
+		text: "All we have to decide is what to do with the time that is given to us, for even the smallest choices can shape the path ahead and lead us toward courage or regret.",
+		source: " The Fellowship of the Ring · J.R.R. Tolkien · Book 1" ,
+	},
   ],
   hard: [
     "Cryptographic algorithms, such as RSA and AES-256, protect sensitive data through mathematical complexity. Developers must implement proper key rotation, salted hashing, and secure transport layers (TLS 1.3) to prevent vulnerabilities. Always audit dependencies: one misconfigured package can compromise an entire system!",
@@ -56,10 +77,10 @@ function getRandomParagraph(difficulty) {
   const list = PARAGRAPHS[difficulty];
   const item = list[Math.floor(Math.random() * list.length)];
 
-  // If it's already an object (easy), return it
+  // If it's already an object (UPDATED), return it
   if (typeof item === "object") return item;
 
-  // If it's a string (medium/hard/code), wrap it
+  // If it's a string (NOT UPDATED), wrap it
   return {
     text: item,
     source: "Unknown Source",
