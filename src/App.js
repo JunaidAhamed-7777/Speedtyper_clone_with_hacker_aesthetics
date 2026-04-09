@@ -272,7 +272,7 @@ export default function App() {
   const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
   const [isRunning, setIsRunning] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
-  const [startTime, setStartTime] = useState(null);
+  //const [startTime, setStartTime] = useState(null);
 
   const inputRef = useRef(null);
   const timerRef = useRef(null);
@@ -387,7 +387,7 @@ export default function App() {
 		  <span className="logo-shift">Shift</span>
 		  <span className="logo-bracket">]</span>
 		</div>
-        <p className="tagline">// how fast are your fingers?</p>
+        <p className="tagline">There are no two words in the English language more harmful than "good job"</p>
       </header>
 
       <div className="controls">
