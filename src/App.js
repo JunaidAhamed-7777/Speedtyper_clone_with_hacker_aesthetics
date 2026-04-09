@@ -53,7 +53,7 @@ const PARAGRAPHS = {
 		text: "The man in black fled across the desert, and the gunslinger followed, moving steadily under the burning sun, driven by a purpose that stretched far beyond the horizon.",
 		source: " The Gunslinger · Stephen King · Chapter 1" ,
 	},
-	
+	//comment to commit
 	{
 		text: "All we have to decide is what to do with the time that is given to us, for even the smallest choices can shape the path ahead and lead us toward courage or regret.",
 		source: " The Fellowship of the Ring · J.R.R. Tolkien · Book 1" ,
@@ -336,7 +336,7 @@ export default function App() {
       <header className="app-header">
         <div className="logo">
           <span className="logo-bracket">[</span>
-          type<span className="logo-accent">.</span>speed
+          Type<span className="logo-accent">.</span>Shift
           <span className="logo-bracket">]</span>
         </div>
         <p className="tagline">// how fast are your fingers?</p>
