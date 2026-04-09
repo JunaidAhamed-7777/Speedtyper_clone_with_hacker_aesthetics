@@ -36,11 +36,11 @@ function getRandomParagraph(difficulty) {
 }
 
 function getPerformanceLabel(wpm) {
-  if (wpm >= 80) return { label: "Speed Demon 🔥", color: "#ff6b35" };
-  if (wpm >= 60) return { label: "Advanced 🚀", color: "#39ff14" };
-  if (wpm >= 40) return { label: "Intermediate ⚡", color: "#00d4ff" };
-  if (wpm >= 20) return { label: "Beginner 🌱", color: "#ffd700" };
-  return { label: "Keep Practicing 💪", color: "#a0a0a0" };
+  if (wpm >= 80) return { label: "Expert", color: "#ff6b35" };
+  if (wpm >= 60) return { label: "Advanced", color: "#39ff14" };
+  if (wpm >= 40) return { label: "Intermediate", color: "#00d4ff" };
+  if (wpm >= 20) return { label: "Beginner", color: "#ffd700" };
+  return { label: "Keep Practicing", color: "#a0a0a0" };
 }
 
 // ─── Timer ────────────────────────────────────────────────────────────
@@ -329,7 +329,7 @@ export default function App() {
       </main>
 
       <footer className="app-footer">
-        built with React · no backend · pure speed
+        built with React · With Love · By Junaid
       </footer>
     </div>
   );
