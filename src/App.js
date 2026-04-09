@@ -381,10 +381,12 @@ export default function App() {
 
       <header className="app-header">
         <div className="logo">
-          <span className="logo-bracket">[</span>
-          Type<span className="logo-accent">.</span>Shift
-          <span className="logo-bracket">]</span>
-        </div>
+		  <span className="logo-bracket">[</span>
+		  <span className="logo-type">Type</span>
+		  <span className="logo-dot">.</span>
+		  <span className="logo-shift">Shift</span>
+		  <span className="logo-bracket">]</span>
+		</div>
         <p className="tagline">// how fast are your fingers?</p>
       </header>
 

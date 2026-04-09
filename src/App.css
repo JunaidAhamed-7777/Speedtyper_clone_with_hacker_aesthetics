@@ -432,3 +432,20 @@ body {
 
   .timer-wrapper { gap: 0.8rem; }
 }
+
+.logo-type {
+  color: #39ff14;
+  text-shadow: 0 0 6px #39ff14;
+}
+
+.logo-shift {
+  color: #ff3b3b;
+  text-shadow: 0 0 6px #ff3b3b;
+}
+
+.logo-bracket {
+  color: #ffffff;
+  text-shadow: 
+    0 0 4px #ffffff,
+    0 0 8px #ffffff;
+}
