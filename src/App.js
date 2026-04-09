@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./App.css";
 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 // ─── Paragraphs ───────────────────────────────────────────────────────────
 
 const PARAGRAPHS = {
@@ -423,6 +425,25 @@ export default function App() {
               inputRef={inputRef}
             />
             <p className="shortcut-hint">tab → restart</p>
+            <div className="social-links">
+              <a
+                href="https://github.com/JunaidAhamed-7777/Type.Shift"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <FaGithub />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/junaid-ahamed-77920a346/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+            </div>
           </>
         ) : (
           <Result

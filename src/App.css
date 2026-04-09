@@ -449,3 +449,34 @@ body {
     0 0 4px #ffffff,
     0 0 8px #ffffff;
 }
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 24px;
+  color: #aaa;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Brand colors on hover */
+.social-links a:hover svg {
+  color: #39ff14; /* default glow (you can customize below) */
+}
+
+/* Optional: differentiate */
+.social-links a:first-child:hover svg {
+  color: #ffffff; /* GitHub */
+}
+
+.social-links a:last-child:hover svg {
+  color: #0a66c2; /* LinkedIn */
+}
