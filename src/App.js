@@ -189,6 +189,17 @@ function LiveStats({ wpm, accuracy, correctChars, totalTyped }) {
 
 // ─── Typing Box ───────────────────────────────────────────────────────
 function TypingBox({ paragraph, userInput, onInput, isFinished, inputRef }) {
+  const boxRef = useRef(null);
+  <div className="typing-box" ref={boxRef}></div>
+  useEffect(() => {
+    if (userInput.length > 0) {
+      boxRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [userInput]);
+
   const renderText = () => {
     return paragraph.split("").map((char, i) => {
       let cls = "char-pending";
