@@ -481,3 +481,22 @@ body {
 .social-links a:last-child:hover svg {
   color: #0a66c2; /* LinkedIn */
 }
+
+.result-image {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-image img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.result-image img:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}

@@ -12,6 +12,7 @@ const PARAGRAPHS = {
     {
       text: "Once there were four children named Peter, Susan, Edmund, and Lucy who were sent away from London to live in a large old house full of rooms and long quiet hallways.",
       source: " The Lion, the Witch and the Wardrobe · C.S. Lewis · Chapter 1",
+      image: "/assets/lionwitchwardrobe.png",
     },
 	
 	//!!!!!! NOTE TO SELF: DO NOT FORGET THE COMMAS AFTER TEXT AND SOURCE ALSO !!!!!!
@@ -241,7 +242,7 @@ function TypingBox({ paragraph, userInput, onInput, isFinished, inputRef }) {
 }
 
 // ─── Result Screen ────────────────────────────────────────────────────
-function Result({ wpm, accuracy, timeTaken, source, onRestart }) {
+function Result({ wpm, accuracy, timeTaken, source,image, onRestart }) {
   const { label, color } = getPerformanceLabel(wpm);
   return (
     <div className="result-screen">
@@ -261,10 +262,18 @@ function Result({ wpm, accuracy, timeTaken, source, onRestart }) {
           <span className="result-number" style={{ color: "#ffd700" }}>{timeTaken}s</span>
           <span className="result-desc">Time Taken</span>
         </div>
+
 		<div className="result-source">
 		  <span className="source-label">Source:</span>
 		  <span className="source-text">{source}</span>
 		</div>
+
+    {image && (
+      <div className="result-image">
+        <img src={image} alt="Book cover" />
+      </div>
+    )}
+
       </div>
       <button className="restart-btn" onClick={onRestart}>
         ↺ Try Again
@@ -462,6 +471,7 @@ export default function App() {
 			  accuracy={accuracy}
 			  timeTaken={timeTaken}
 			  source={paragraphData.source}
+        image={paragraphData.image}
 			  onRestart={handleRestart}
 			/>
         )}
