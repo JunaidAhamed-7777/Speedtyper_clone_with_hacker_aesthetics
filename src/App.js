@@ -60,10 +60,32 @@ const PARAGRAPHS = {
 	},
   ],
   hard: [
-    "Cryptographic algorithms, such as RSA and AES-256, protect sensitive data through mathematical complexity. Developers must implement proper key rotation, salted hashing, and secure transport layers (TLS 1.3) to prevent vulnerabilities. Always audit dependencies: one misconfigured package can compromise an entire system!",
-    "The phenomenon of \"quantum entanglement\" suggests that particles, once linked, instantaneously affect each other regardless of distance — defying classical physics. Einstein famously called this \"spooky action at a distance.\" Modern quantum computers exploit superposition & entanglement to solve problems exponentially faster.",
-    "In distributed systems, the CAP theorem states: consistency, availability, and partition-tolerance cannot all be guaranteed simultaneously. Engineers must make trade-offs; for example, Apache Kafka prioritizes throughput & fault-tolerance over strict consistency. Understanding these trade-offs is crucial for scalable architecture!",
-    "Object-oriented design relies on four pillars: encapsulation, abstraction, inheritance, and polymorphism. Well-structured code adheres to SOLID principles — particularly the single-responsibility principle. Refactoring legacy code? Watch for code smells: long methods, deep nesting, and duplicated logic.",
+	{
+		text: "The laws of physics remain consistent across all inertial frames of reference, forming the basis of relativity, where measurements of time and space depend on the observer, yet the fundamental principles governing them remain unchanged.",
+		source: " Relativity: The Special and General Theory · Albert Einstein · Part 1",
+	},
+
+	{
+		text: "Natural selection operates through the preservation of favorable variations and the rejection of harmful ones, gradually shaping species over generations as organisms adapt to their environment in subtle yet powerful ways.",
+		source: " On the Origin of Species · Charles Darwin · Chapter 4",
+	},
+	
+	{
+		text: "Programs must be written for people to read and only incidentally for machines to execute, emphasizing clarity, structure, and abstraction as essential qualities in the development of reliable and maintainable software systems.",
+		source: " Structure and Interpretation of Computer Programs · Abelson & Sussman · Chapter 1",
+	},
+
+	{
+		text: "Information can be understood as the resolution of uncertainty, where communication systems are designed to encode, transmit, and decode messages efficiently while minimizing loss and distortion in the presence of noise.",
+		source: " A Mathematical Theory of Communication · Claude Shannon · Section 1",
+	},
+
+	{
+		text: "The universe follows a set of laws that may not always align with human intuition, yet through observation, mathematics, and experimentation, we can gradually uncover patterns that explain even the most complex phenomena.",
+		source: " The Grand Design · Stephen Hawking · Chapter 1",
+	},
+
+
   ],
   code: [
     "const fetchData = async (url) => { try { const res = await fetch(url); if (!res.ok) throw new Error('Network error'); const data = await res.json(); return data; } catch (err) { console.error('Failed:', err.message); return null; } };",
