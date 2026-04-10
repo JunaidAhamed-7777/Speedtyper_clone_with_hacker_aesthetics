@@ -45,57 +45,69 @@ const PARAGRAPHS = {
 	{
 		text: "It was the best of times, it was the worst of times, a period filled with hope and despair, where everything seemed possible yet uncertain, and the world moved forward in ways no one could fully understand.",
 		source: " A Tale of Two Cities · Charles Dickens · Book 1, Chapter 1" ,
+    image: "/assets/taleoftwocities.png",
 	},
 	
 	{
 		text: "Call me Ishmael. Some years ago, never mind how long precisely, I found myself drawn to the sea, seeking a sense of purpose and adventure in a world that often felt too confined.",
-		source: " Moby-Dick · Herman Melville · Chapter 1" ,
+		source: " Moby Dick · Herman Melville · Chapter 1" ,
+    image: "/assets/mobydick.png",
+
 	},
 	
 	{
 		text: "It is a truth universally acknowledged that a single man of fortune must be in want of a wife, though the feelings and views of such a man may be quite unknown to those around him.",
 		source: " Pride and Prejudice · Jane Austen · Chapter 1" ,
+    image: "/assets/prideandprejudice.png",
 	},
 	
 	{
 		text: "The man in black fled across the desert, and the gunslinger followed, moving steadily under the burning sun, driven by a purpose that stretched far beyond the horizon.",
 		source: " The Gunslinger · Stephen King · Chapter 1" ,
+    image: "/assets/gunslinger.png",
 	},
 	//comment to commit
 	{
 		text: "All we have to decide is what to do with the time that is given to us, for even the smallest choices can shape the path ahead and lead us toward courage or regret.",
 		source: " The Fellowship of the Ring · J.R.R. Tolkien · Book 1" ,
+    image: "/assets/fellowshipofthering.png",
 	},
   ],
   hard: [
 	{
 		text: "The laws of physics remain consistent across all inertial frames of reference, forming the basis of relativity, where measurements of time and space depend on the observer, yet the fundamental principles governing them remain unchanged.",
 		source: " Relativity: The Special and General Theory · Albert Einstein · Part 1",
+    image: "/assets/relativity.png",
 	},
 
 	{
 		text: "Natural selection operates through the preservation of favorable variations and the rejection of harmful ones, gradually shaping species over generations as organisms adapt to their environment in subtle yet powerful ways.",
 		source: " On the Origin of Species · Charles Darwin · Chapter 4",
+    image: "/assets/originofspecies.png",
 	},
 	
 	{
 		text: "Programs must be written for people to read and only incidentally for machines to execute, emphasizing clarity, structure, and abstraction as essential qualities in the development of reliable and maintainable software systems.",
 		source: " Structure and Interpretation of Computer Programs · Abelson & Sussman · Chapter 1",
+    image: "/assets/structureandinterpretationofcomputerprograms.png",
 	},
 
 	{
 		text: "Information can be understood as the resolution of uncertainty, where communication systems are designed to encode, transmit, and decode messages efficiently while minimizing loss and distortion in the presence of noise.",
 		source: " A Mathematical Theory of Communication · Claude Shannon · Section 1",
+    image: "/assets/mathematicaltheoryofcommunication.png",
 	},
 
 	{
 		text: "The universe follows a set of laws that may not always align with human intuition, yet through observation, mathematics, and experimentation, we can gradually uncover patterns that explain even the most complex phenomena.",
 		source: " The Grand Design · Stephen Hawking · Chapter 1",
+    image: "/assets/granddesign.png",
 	},
 
 
   ],
   code: [
+    //IMAGE SECTION NOT NEEDED FOR CODE it looks ugly
     {
       text: "int bs(int a[],int n,int x){int l=0,r=n-1;while(l<=r){int m=(l+r)/2;if(a[m]==x)return m;else if(a[m]<x)l=m+1;else r=m-1;}return -1;}",
       source: " Binary Search",
