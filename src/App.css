@@ -500,3 +500,31 @@ body {
   transform: scale(1.1);
   transition: 0.2s;
 }
+
+.live-stats {
+  display: flex;
+  /*
+  align-items: center;
+  justify-content: center;
+  */
+  gap: 12px;
+  flex-wrap: wrap; /* helps on mobile */
+}
+
+.reset-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  border: 1px solid #555;
+  background: transparent;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  color: #39ff14;
+  border-color: #39ff14;
+  transform: scale(1.1);
+}
