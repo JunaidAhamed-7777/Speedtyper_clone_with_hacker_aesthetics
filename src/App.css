@@ -286,7 +286,7 @@ body {
 
 .click-hint {
   font-size: 0.65rem;
-  color: var(--text-dim);
+  color: #d8f533;
   margin-top: 0.9rem;
   letter-spacing: 0.5px;
   opacity: 0.6;
