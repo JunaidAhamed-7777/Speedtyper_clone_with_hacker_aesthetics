@@ -101,7 +101,7 @@ body {
 
 .control-label {
   font-size: 0.7rem;
-  color: var(--text-dim);
+  color: #d8f533;
   letter-spacing: 0.5px;
   margin-right: 0.25rem;
 }

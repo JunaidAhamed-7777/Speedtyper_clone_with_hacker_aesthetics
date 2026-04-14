@@ -434,7 +434,7 @@ export default function App() {
 
       <div className="controls">
         <div className="control-group">
-          <span className="control-label">difficulty:</span>
+          <span className="control-label">Difficulty:</span>
           {["easy", "medium", "hard", "code"].map((d) => (
             <button
               key={d}
